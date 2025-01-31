@@ -1,0 +1,23 @@
+/* Universal styles */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  } 
+  
+  /* Footer styles */
+ .footer {
+    margin-top: 30px;
+    width: 100vw;
+    background-color:#003f73; /* Dark background color */
+    color: white; /* White text color */
+    text-align: center; /* Centered text */
+    padding: 20px 0; /* Padding top and bottom */
+    width: 100%; /* Full width */
+    position: relative; /* Adjust if you don't want it fixed */
+    bottom: 0; /* Align to the bottom if you want it fixed */
+}
+
+.footer p {
+    margin: 5px 0; /* Margin for paragraphs inside the footer */
+}

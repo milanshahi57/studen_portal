@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{%static 'css/navbar.css'%}"/>
+    <link rel="stylesheet" href="{%static 'css/footer.css'%}"/>
+    <link rel="stylesheet" href="{%static 'css/about.css'%}"/>
+    <link rel="stylesheet" href="{% static 'css/year.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/subjects.css' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+    <!-- Navbar starts here -->
+    <nav>
+        <div id="nav-logo">
+            <i class="fa-solid fa-graduation-cap fa" aria-hidden="true" style="color:white;"></i>
+            <p style="color:white;">Student Portal</p>
+        </div>
+        <div class="items-container">
+            <ul>
+                <li><a href="{% url 'home' %}" class="nav-items">Home</a></li>
+                <li><a href="" class="nav-items">Notice</a></li>
+                <li><a href="" class="nav-items">Entrance</a></li>
+                <li class="dropdown">
+                    <a href="{% url 'year' %}" class="nav-items year">Year</a>
+                <ul class="drop">
+                <li><a href="{% url 'subjects' 'first' %}" class="nav-items">First</a></li>
+                <li><a href="{% url 'subjects' 'second' %}" class="nav-items">Second</a></li>
+                <li><a href="{% url 'subjects' 'third' %}" class="nav-items">Third</a></li>
+                <li><a href="{% url 'subjects' 'fourth' %}" class="nav-items">Fourth</a></li>
+                </ul>
+                </li>
+                <li><a href="" class="nav-items">Contact</a></li>
+                <li><a href="{% url 'about' %}" class="nav-items">About</a></li>
+                </ul>
+          </div>
+          <div>
+            <button class="login-button"> <a href="{% url 'login' %}" class="link-login">Login</a></button>  
+          </div>
+        </nav>
+    <!-- Navbar ends here -->
+    <main>
+        
+        {% block content %}
+            
+        {% endblock content %}
+    </main>
+     <!-- Footer starts here -->
+ <footer class="footer">
+    <p>&copy; 2024 PortalHunters. All rights reserved.</p>
+    <p>Credit goes to:</p>
+    <p>Sandesh Subedi</p>
+    <p>Sushant Tripathi</p>
+    <p>Sugam Pokhrel</p>
+    <p>Milan Shahi</p>
+</footer>
+<!-- Footer ends here -->
+</body>
+</html>
+    

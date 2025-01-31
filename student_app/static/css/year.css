@@ -1,0 +1,41 @@
+.year-container {
+    text-align: center;
+    margin-top: 80px; /* Adds space below navbar */
+}
+
+.year-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.year-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 80vw; /* 80% of the viewport width */
+    height: 60vh; /* 60% of the viewport height */
+    margin: 0 auto;
+}
+
+.year-box {
+    background-color: rgb(158, 172, 221);
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+}
+
+.year-box:hover {
+    background-color: rgb(7, 48, 192);
+    color: white;
+}
+.fa-book{
+    margin-right: 30px;
+}
