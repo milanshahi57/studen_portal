@@ -96,7 +96,9 @@
     position: fixed;
     top: 0px;
     width: 100vw;
-    padding: 0 20px; /* Adjusted to move "Student Portal" a bit to the right */
+    padding: 0 20px; 
+    opacity: 1;
+    z-index: 100;
   }
    /*login button of */
   .login-button {
@@ -143,7 +145,7 @@
 
 /* Year dropdown styles */
 .year {
-  width: 100px; /* Adjusted width to match dropdown */
+  width: 100px; 
   text-align: center;
   gap: 0px;
 }
@@ -160,16 +162,16 @@
   text-align: center;
   background-color: rgba(77, 102, 244, 0.521);
   display: none;
-  max-width: 100px; /* Set same width as .year */
+  max-width: 100px; 
 }
 .drop li a{
   width: 100%;
 }
 
-/* Change background color of the entire <li> on hover */
+
 .drop .nav-items:hover {
-  background-color: rgb(10, 62, 250);  /* Background color when hovering over dropdown items */
-  color: white;  /* Optional: change text color to white */
+  background-color: rgb(10, 62, 250);  
+  color: white;  
 }
 
 /* Show dropdown menu on hover */

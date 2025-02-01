@@ -1,7 +1,7 @@
 /* Container styling */
 .subjects-container {
     text-align: center;
-    margin-top: 80px; /* Space below navbar */
+    margin-top: 80px; 
 }
 
 .subjects-container h2 {
@@ -13,9 +13,9 @@
 /* Grid layout for subject boxes */
 .subjects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 20px;
-    width: 80vw; /* Covers 80% of the viewport width */
+    width: 80vw; 
     height: auto;
     margin: 0 auto;
 }
@@ -35,11 +35,11 @@
     font-weight: bold;
     padding: 40px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); 
    
 }
 .subject-image {
-    width: 70px; /* Adjust size as needed */
+    width: 70px; 
     height: 50px;
    border-radius: 12px;
 }
