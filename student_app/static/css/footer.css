@@ -1,23 +1,26 @@
-/* Universal styles */
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-  } 
-  
-  /* Footer styles */
- .footer {
-    margin-top: 30px;
+
+.footer{
+    height: 150px;
     width: 100vw;
-    background-color:#003f73; /* Dark background color */
-    color: white; /* White text color */
-    text-align: center; /* Centered text */
-    padding: 20px 0; /* Padding top and bottom */
-    width: 100%; /* Full width */
-    position: relative; /* Adjust if you don't want it fixed */
-    bottom: 0; /* Align to the bottom if you want it fixed */
+    background-color:#002a73;
+    display: flex;
+    justify-content: space-between;
+    color:white;
+    margin-top: 40px;
 }
 
-.footer p {
-    margin: 5px 0; /* Margin for paragraphs inside the footer */
+.footer-content{
+    padding: 10px 30px;
+    padding-top: 10px;
+    text-align: center;
 }
+
+.social-media{
+    font-size: 1.5em;
+    width: 200px;
+    margin-right: 20px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
