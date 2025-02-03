@@ -13,6 +13,9 @@ def about(request):
 def year(request):
     return render(request, 'year.html')
 
+def contact(request):
+    return render(request, 'contact.html')
+
 from django.shortcuts import render
 from .models import Subject  # Make sure to import the Subject model
 
