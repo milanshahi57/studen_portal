@@ -28,3 +28,10 @@ def subjects(request, year):
         'year': year,
         'subjects': subjects_list
     })
+
+
+from .models import Notice
+
+def notice_list(request):
+    notices = Notice.objects.all().order_by('-created_at')  # Latest first
+    return render(request, 'notices.html', {'notices': notices})
