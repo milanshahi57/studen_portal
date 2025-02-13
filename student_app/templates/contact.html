@@ -25,6 +25,14 @@
                 <button type="submit" class="submit-button">Send Message</button>
             </form>
             
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            
             
             <div class="contact-info">
                 <h3>Contact Information</h3>

@@ -35,3 +35,25 @@ from .models import Notice
 def notice_list(request):
     notices = Notice.objects.all().order_by('-created_at')  # Latest first
     return render(request, 'notices.html', {'notices': notices})
+
+
+# for contact form submission
+from .models import ContactMessage
+from django.contrib import messages
+
+
+def contact_view(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        if name and email and message:
+            # Save to database
+            ContactMessage.objects.create(name=name, email=email, message=message)
+            messages.success(request, "Your message has been submitted successfully!")
+            return redirect('contact')
+        else:
+            messages.error(request, "Please fill out all fields.")
+
+    return render(request, 'contact.html')
