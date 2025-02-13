@@ -20,6 +20,12 @@
     color: #004aad; /* Slightly lighter blue */
 }
 
+/* contact algin */
+.contact_align{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 /* Contact Container */
 .contact-container {
     display: flex;
@@ -28,6 +34,7 @@
     gap: 30px;
     padding: 20px;
     flex-wrap: wrap;
+    width: 70%;
 }
 
 /* Contact Form */
@@ -88,6 +95,7 @@
 /* Contact Info Section */
 .contact-info {
     max-width: 400px;
+    
     padding: 20px;
     background: white;
     border-radius: 10px;

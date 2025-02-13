@@ -8,7 +8,7 @@
 <section class="contact-section">
     <h1>Contact Us</h1>
     <p>We'd love to hear from you! Please fill out the form below or reach out using the contact details provided.</p>
-    
+    <div class="contact_align">
     <div class="contact-container">
         <form class="contact-form" action="{% url 'contact' %}" method="POST">
             {% csrf_token %}
@@ -31,26 +31,34 @@
         <p><strong>Phone:</strong> +977-9800000000</p>
         <p><strong>Address:</strong> Bagar, Pokhara, Nepal</p>
     </div>
+</div>
 </section>
 
-<!-- JavaScript for alert pop-up messages -->
+<!-- Alert pop-up messages in the center -->
 {% if messages %}
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             {% for message in messages %}
                 let msgType = "{{ message.tags }}"; // 'success' or 'error'
                 let color = msgType === "success" ? "green" : "red";
+                
+                // Create the alert box
                 let alertBox = document.createElement("div");
                 alertBox.textContent = "{{ message }}";
                 alertBox.style.position = "fixed";
-                alertBox.style.top = "10px";
-                alertBox.style.right = "10px";
+                alertBox.style.top = "50%";
+                alertBox.style.left = "50%";
+                alertBox.style.transform = "translate(-50%, -50%)";
                 alertBox.style.backgroundColor = color;
                 alertBox.style.color = "white";
-                alertBox.style.padding = "15px";
-                alertBox.style.borderRadius = "5px";
+                alertBox.style.padding = "20px";
+                alertBox.style.borderRadius = "10px";
+                alertBox.style.textAlign = "center";
                 alertBox.style.zIndex = "1000";
-                alertBox.style.fontSize = "16px";
+                alertBox.style.fontSize = "18px";
+                alertBox.style.fontWeight = "bold";
+                alertBox.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+
                 document.body.appendChild(alertBox);
                 
                 setTimeout(() => {
