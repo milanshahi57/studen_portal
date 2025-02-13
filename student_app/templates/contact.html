@@ -5,43 +5,60 @@
 
 {% block content %}
 
-
-    <section class="contact-section">
-        <h1>Contact Us</h1>
-        <p>We'd love to hear from you! Please fill out the form below or reach out using the contact details provided.</p>
+<section class="contact-section">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! Please fill out the form below or reach out using the contact details provided.</p>
+    
+    <div class="contact-container">
+        <form class="contact-form" action="{% url 'contact' %}" method="POST">
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
         
-        <div class="contact-container">
-            <form class="contact-form" action="{% url 'contact' %}" method="POST">
-                {% csrf_token %}
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-            
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-            
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
-            
-                <button type="submit" class="submit-button">Send Message</button>
-            </form>
-            
-            {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                        <li>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-            
-            
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p><strong>Email:</strong> milansugammelan@gmail.com</p>
-                <p><strong>Phone:</strong> +977-9800000000</p>
-                <p><strong>Address:</strong> Bagar, Pokhara, Nepal</p>
-            </div>
-        </div>
-    </section>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+        
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+    </div>
 
+    <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p><strong>Email:</strong> milansugammelan@gmail.com</p>
+        <p><strong>Phone:</strong> +977-9800000000</p>
+        <p><strong>Address:</strong> Bagar, Pokhara, Nepal</p>
+    </div>
+</section>
 
-    {% endblock content%}
+<!-- JavaScript for alert pop-up messages -->
+{% if messages %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            {% for message in messages %}
+                let msgType = "{{ message.tags }}"; // 'success' or 'error'
+                let color = msgType === "success" ? "green" : "red";
+                let alertBox = document.createElement("div");
+                alertBox.textContent = "{{ message }}";
+                alertBox.style.position = "fixed";
+                alertBox.style.top = "10px";
+                alertBox.style.right = "10px";
+                alertBox.style.backgroundColor = color;
+                alertBox.style.color = "white";
+                alertBox.style.padding = "15px";
+                alertBox.style.borderRadius = "5px";
+                alertBox.style.zIndex = "1000";
+                alertBox.style.fontSize = "16px";
+                document.body.appendChild(alertBox);
+                
+                setTimeout(() => {
+                    alertBox.remove();
+                }, 3000); // Auto remove after 3 seconds
+            {% endfor %}
+        });
+    </script>
+{% endif %}
+
+{% endblock content %}
