@@ -18,7 +18,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
 </head>
+<style>
+    /* Message Alert Styling */
+    .alert {
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        color: white;
+        font-weight: bold;
+        z-index: 1000;
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
+    }
+
+    .alert.success {
+        background-color: #28a745; /* Green for success */
+    }
+
+    .alert.error {
+        background-color: #dc3545; /* Red for error */
+    }
+</style>
 <body>
+    <body>
+        <!-- Message Alerts -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
     <!-- Navbar starts here -->
     <nav>
         <div id="nav-logo">
@@ -77,6 +109,17 @@
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript for Auto-Dismiss Alerts -->
+    <script>
+        setTimeout(function() {
+            let alerts = document.querySelectorAll(".alert");
+            alerts.forEach(alert => {
+                alert.style.opacity = "0";
+                setTimeout(() => alert.remove(), 500);
+            });
+        }, 3000);
+    </script>
     
 <!-- Footer ends here -->
 </body>

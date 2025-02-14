@@ -38,3 +38,16 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return self.name
+
+#registered user displaying
+
+
+class RegisteredUser(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    username = models.CharField(max_length=150, unique=True)
+    email = models.EmailField(unique=True)
+    date_joined = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.username

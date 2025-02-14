@@ -4,12 +4,15 @@ from django.conf import settings  # Import settings
 from django.conf.urls.static import static  # Import static
 from .views import notice_list
 from .views import contact_view
+from .views import register_view, login_view
+from django.contrib.auth.views import LogoutView
 
 
 urlpatterns = [
     path('',views.home,name='home'),
-    path('register/', views.register, name='register'),
-    path('login/', views.login, name='login'),
+     path('register/', register_view, name='register'),
+    path('login/', login_view, name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
     path('about/',views.about, name='about'),
     path('year/',views.year, name='year'),
     # path('contact/',views.contact, name='contact'),
