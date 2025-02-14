@@ -8,7 +8,8 @@ from .views import contact_view
 
 urlpatterns = [
     path('',views.home,name='home'),
-    path('login/',views.login,name='login'),
+    path('register/', views.register, name='register'),
+    path('login/', views.login, name='login'),
     path('about/',views.about, name='about'),
     path('year/',views.year, name='year'),
     # path('contact/',views.contact, name='contact'),

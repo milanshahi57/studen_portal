@@ -15,6 +15,9 @@ def year(request):
 
 def contact(request):
     return render(request, 'contact.html')
+ 
+def register(request):
+    return render(request, 'register.html')
 
 from django.shortcuts import render
 from .models import Subject  # Make sure to import the Subject model

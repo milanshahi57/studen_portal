@@ -1,24 +1,35 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
 
-{% block title %} login_form
-    
-{% endblock title %}
-    
+{% block title %}Login |student portal{% endblock %}
 
 {% block content %}
-<div class="outer">
-    <div class="login">
-        <form class="login-form" action="action.php">
-            <h1 h1-login>LOG IN</h1>
-            <label class="label-login" for="username">Username</label>
-            <input class="input-login" type="text" id="username" />
-            <label class="label-login" for="password">Password</label>
-            <input class="input-login" type="password" id="password" />
-            <button class="lsubmit-button" type="submit">Submit</button>
-        </form>
+<div class="login-container">
+
+     <!-- Register Link Section -->
+     <section id="register-link" class="register-link-section">
+      <p class="login-footer">Don't have an account? <a href="{% url 'register' %}" class="login-link switch-link" id="to-register">Register here</a></p>
+  </section>
+
+    <div class="login-wrapper">
+      <!-- Login Form -->
+        <section id="login" class="login-section">
+            <form method="post" action="{% url 'login' %}" class="login-form">
+                {% csrf_token %}
+                <label for="username" class="login-label">Username:<br>
+                    <input type="text" id="username" name="username" class="login-input placeholder-bold" placeholder="Username" required>
+                </label>
+
+                <label for="password" class="login-label">Password:<br>
+                    <input type="password" id="password" name="password" class="login-input placeholder-bold" placeholder="Password" required>
+                </label>
+
+                <button type="submit" class="login-button">Login</button>
+            </form>
+           
+        </section>
     </div>
 </div>
 
-{% endblock content %}
-    
+
+{% endblock %}
