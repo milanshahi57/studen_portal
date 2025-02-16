@@ -126,13 +126,14 @@ text-decoration: none;
   /* footer code */
   
 .footer{
-  height: 150px;
+  height: 200px;
   width: 100vw;
   background-color:#002a73;
   display: flex;
   justify-content: space-between;
   color:white;
   margin-top: 40px;
+  padding: 20px;
 
 }
 
